@@ -1,0 +1,35 @@
+[
+	{ "id":1,"type":"simple","question":"How many claims do we have?",
+	  "sql":"SELECT COUNT(*) AS number_of_claims FROM benchmark.Claim"
+	},
+	{ "id":2,"type":"simple","question":"How many policies do we have?",
+	  "sql":"SELECT COUNT(*) AS number_of_policies FROM benchmark.Policy"
+	},
+	{ "id":3,"type":"simple","question":"How many claims have been placed by policy number?",
+	  "sql":"SELECT p.Policy_Number, COUNT(c.Claim_Identifier) AS Claims_Count FROM semantic_pc_benchmark.Policy AS p JOIN semantic_pc_benchmark.Policy_Coverage_Detail AS pcd ON p.Policy_Identifier = pcd.Policy_Identifier JOIN semantic_pc_benchmark.Claim_Coverage AS cc ON pcd.Policy_Coverage_Detail_Identifier = cc.Policy_Coverage_Detail_Identifier JOIN semantic_pc_benchmark.Claim AS c ON cc.Claim_Identifier = c.Claim_Identifier GROUP BY p.Policy_Number"
+	},
+	{ "id":4,"type":"simple","question":"How many policies does each policy holder have by policy holder id?",
+	  "sql":"SELECT ph.Party_identifier, COUNT(ph.Policy_Identifier) AS Policies_Count FROM semantic_pc_benchmark.PolicyHolder AS ph GROUP BY ph.Party_identifier"	  
+	},	
+	{ "id":5,"type":"simple","question":"How many policies have agents sold by agent id?",
+	  "sql":"SELECT a.Party_identifier, COUNT(a.Policy_Identifier) AS Policies_Sold FROM semantic_pc_benchmark.Agent AS a GROUP BY a.Party_identifier"
+	},
+	{ "id":6,"type":"simple","question":"What is the average policy size which is the total amount of premium divided by the number of policies?",
+	  "sql":"SELECT SUM(Policy_Amount) / COUNT(DISTINCT Policy_Identifier) AS Average_Policy_Size FROM semantic_pc_benchmark.Policy_Amounts WHERE is_premium = 'Y'"
+	},	
+	{ "id":7,"type":"simple","question":"What is the average time to settle a claim by policy number?",
+	  "sql":"SELECT p.Policy_Number, AVG(DATEDIFF(c.Claim_Close_Date, c.Claim_Open_Date)) AS Average_Settlement_Time FROM semantic_pc_benchmark.Policy AS p JOIN semantic_pc_benchmark.Policy_Coverage_Detail AS pcd ON p.Policy_Identifier = pcd.Policy_Identifier JOIN semantic_pc_benchmark.Claim_Coverage AS cc ON pcd.Policy_Coverage_Detail_Identifier = cc.Policy_Coverage_Detail_Identifier JOIN semantic_pc_benchmark.Claim AS c ON cc.Claim_Identifier = c.Claim_Identifier WHERE c.Claim_Close_Date IS NOT NULL GROUP BY p.Policy_Number"
+	},	
+	{ "id":8,"type":"simple","question":"What is the total amount of premiums paid by policy number?",
+	  "sql":"SELECT p.Policy_Number, SUM(pa.Policy_Amount) AS Total_Premiums FROM semantic_pc_benchmark.Policy AS p JOIN semantic_pc_benchmark.Policy_Amounts AS pa ON p.Policy_Identifier = pa.Policy_Identifier WHERE pa.is_premium = 'Y' GROUP BY p.Policy_Number"
+	},	
+	{ "id":9,"type":"simple","question":"What is the total amount of premiums that a policy holder has paid?, grouped by policy holder.",
+	  "sql":"SELECT ph.Party_identifier, SUM(pa.Policy_Amount) AS Total_Premiums_Paid FROM semantic_pc_benchmark.PolicyHolder AS ph JOIN semantic_pc_benchmark.Policy_Amounts AS pa ON ph.Policy_Identifier = pa.Policy_Identifier WHERE pa.is_premium = 'Y' GROUP BY ph.Party_identifier"
+	},
+	{ "id":10,"type":"simple","question":"What is the total amount of premiums that every policy holder has paid by every policy number?, grouped by policy holder and policy number",
+	  "sql":"SELECT ph.Party_identifier, p.Policy_Number, SUM(pa.Policy_Amount) AS Total_Premiums FROM semantic_pc_benchmark.PolicyHolder AS ph JOIN semantic_pc_benchmark.Policy AS p ON ph.Policy_Identifier = p.Policy_Identifier JOIN semantic_pc_benchmark.Policy_Amounts AS pa ON p.Policy_Identifier = pa.Policy_Identifier WHERE pa.is_premium = 'Y' GROUP BY ph.Party_identifier, p.Policy_Number"
+	},
+	{ "id":11,"type":"simple","question":"Give me the total loss amount by company claim number, total loss amount = loss payment + loss reserve",
+	  "sql":"SELECT c.Company_Claim_Number, (SUM(lp.amount) + SUM(lr.Amount)) AS Total_Loss_Amount FROM benchmark.Loss_Payment lp JOIN benchmark.Claim c ON lp.Claim_Identifier = c.Claim_Identifier JOIN benchmark.Loss_Reserve lr ON c.Claim_Identifier = lr.Claim_Identifier GROUP BY c.Company_Claim_Number"
+	}
+]

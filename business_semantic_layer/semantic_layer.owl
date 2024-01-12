@@ -1,0 +1,541 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.stratio.com/pc_benchmark/"
+     xml:base="http://www.stratio.com/pc_benchmark/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.stratio.com/pc_benchmark/">
+        <owl:versionIRI rdf:resource="http://www.stratio.com/pc_benchmark/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Amount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Amount">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Expense_Payment"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Expense_Reserve"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Loss_Payment"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Loss_Reserve"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Amount_Type_Code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Amount_Type_Code">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim_Amount"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Expense_Payment"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Expense_Reserve"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Loss_Payment"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Loss_Reserve"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Amounts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Catastrophe_Identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Catastrophe_Identifier">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Catastrophe"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Catastrophe_Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Catastrophe_Name">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Catastrophe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Catastrophe_Type_Code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Catastrophe_Type_Code">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Catastrophe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Claim_Amount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Claim_Amount">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim_Amount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Claim_Amount_Identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Claim_Amount_Identifier">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim_Amount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Claim_Close_Date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Claim_Close_Date">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Claim_Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Claim_Description">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Claim_Identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Claim_Identifier">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim_Amount"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim_Coverage"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Expense_Payment"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Expense_Reserve"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Loss_Payment"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Loss_Reserve"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Claim_Offer_Identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Claim_Offer_Identifier">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim_Amount"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Expense_Payment"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Expense_Reserve"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Loss_Payment"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Loss_Reserve"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Claim_Open_Date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Claim_Open_Date">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Claim_Reopen_Date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Claim_Reopen_Date">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Claim_Reported_Date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Claim_Reported_Date">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Claim_Status_Code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Claim_Status_Code">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Claims_Made_Date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Claims_Made_Date">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Company_Catastrophe_Code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Company_Catastrophe_Code">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Catastrophe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Company_Claim_Number -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Company_Claim_Number">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Company_Subclaim_Number -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Company_Subclaim_Number">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Coverage_Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Coverage_Description">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Coverage_Detail"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Coverage_Identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Coverage_Identifier">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Coverage_Detail"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Coverage_Part_Code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Coverage_Part_Code">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Coverage_Detail"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Earning_Begin_Date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Earning_Begin_Date">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Amounts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Earning_End_Date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Earning_End_Date">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Amounts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Effective_Date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Effective_Date">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/Agent"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/PolicyHolder"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim_Coverage"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Amounts"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Coverage_Detail"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Entry_Into_Claims_Made_Program_Date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Entry_Into_Claims_Made_Program_Date">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Event_Date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Event_Date">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim_Amount"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Expense_Payment"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Expense_Reserve"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Loss_Payment"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Loss_Reserve"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Coverage_Detail"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Expiration_Date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Expiration_Date">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/Agent"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/PolicyHolder"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Geographic_Location_Identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Geographic_Location_Identifier">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Amounts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Industry_Catastrophe_Code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Industry_Catastrophe_Code">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Catastrophe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Insurable_Object_Identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Insurable_Object_Identifier">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Amounts"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Coverage_Detail"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Insurance_Type_Code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Insurance_Type_Code">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim_Amount"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Expense_Payment"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Expense_Reserve"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Loss_Payment"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Loss_Reserve"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Amounts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Occurrence_Identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Occurrence_Identifier">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Party_identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Party_identifier">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/Agent"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/PolicyHolder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Policy_Amount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Policy_Amount">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Amounts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Policy_Amount_Identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Policy_Amount_Identifier">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Amounts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Policy_Coverage_Detail_Identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Policy_Coverage_Detail_Identifier">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Claim_Coverage"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Amounts"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Coverage_Detail"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Policy_Identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Policy_Identifier">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/Agent"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/PolicyHolder"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Amounts"/>
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Coverage_Detail"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Policy_Number -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Policy_Number">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Status_Code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/Status_Code">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/is_premium -->
+
+    <owl:DatatypeProperty rdf:about="http://www.stratio.com/pc_benchmark/is_premium">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Amounts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:domain rdf:resource="http://www.stratio.com/pc_benchmark/entities/Policy_Coverage_Detail"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/Agent -->
+
+    <owl:Class rdf:about="http://www.stratio.com/pc_benchmark/Agent"/>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/PolicyHolder -->
+
+    <owl:Class rdf:about="http://www.stratio.com/pc_benchmark/PolicyHolder"/>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/entities/Catastrophe -->
+
+    <owl:Class rdf:about="http://www.stratio.com/pc_benchmark/entities/Catastrophe"/>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/entities/Claim -->
+
+    <owl:Class rdf:about="http://www.stratio.com/pc_benchmark/entities/Claim"/>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/entities/Claim_Amount -->
+
+    <owl:Class rdf:about="http://www.stratio.com/pc_benchmark/entities/Claim_Amount"/>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/entities/Claim_Coverage -->
+
+    <owl:Class rdf:about="http://www.stratio.com/pc_benchmark/entities/Claim_Coverage"/>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/entities/Expense_Payment -->
+
+    <owl:Class rdf:about="http://www.stratio.com/pc_benchmark/entities/Expense_Payment"/>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/entities/Expense_Reserve -->
+
+    <owl:Class rdf:about="http://www.stratio.com/pc_benchmark/entities/Expense_Reserve"/>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/entities/Loss_Payment -->
+
+    <owl:Class rdf:about="http://www.stratio.com/pc_benchmark/entities/Loss_Payment"/>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/entities/Loss_Reserve -->
+
+    <owl:Class rdf:about="http://www.stratio.com/pc_benchmark/entities/Loss_Reserve"/>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/entities/Policy -->
+
+    <owl:Class rdf:about="http://www.stratio.com/pc_benchmark/entities/Policy"/>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/entities/Policy_Amounts -->
+
+    <owl:Class rdf:about="http://www.stratio.com/pc_benchmark/entities/Policy_Amounts"/>
+    
+
+
+    <!-- http://www.stratio.com/pc_benchmark/entities/Policy_Coverage_Detail -->
+
+    <owl:Class rdf:about="http://www.stratio.com/pc_benchmark/entities/Policy_Coverage_Detail"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
